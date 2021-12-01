@@ -9,17 +9,17 @@ const getData = () => {
   };
   return axios(config);
 };
-const postData = () => {
-  // payload:{
-  //   name: "name",
-  // }
-  const config = {
-    url: "db.json",
-    method: "post"
-    // data:payload
-  };
-  return axios(config);
-};
+// const postData = () => {
+//   // payload:{
+//   //   name: "name",
+//   // }
+//   const config = {
+//     url: "db.json",
+//     method: "post"
+//     // data:payload
+//   };
+//   return axios(config);
+// };
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -35,9 +35,33 @@ export default function App() {
       setLoading(false);
     });
   }, []);
+  const carsAbove = () => {
+    setRes(res.filter((item, i) => item.price > 100000));
+  };
+  const carsBelow = () => {
+    setRes(res.filter((item, i) => item.price <= 100000));
+  };
+  const beforeYear = () => {
+    setRes(res.filter((item, i) => item.year <= 2001));
+  };
+  const afterYear = () => {
+    setRes(res.filter((item, i) => item.year > 2001));
+  };
+  const filterBySUV = () => {
+    setRes(res.filter((item, i) => item.type === "SUV"));
+  };
+  const filterByHATCHBACK = () => {
+    setRes(res.filter((item, i) => item.type === "HATCHBACK"));
+  };
+  const filterByCROSSOVER = () => {
+    setRes(res.filter((item, i) => item.type === "CROSSOVER"));
+  };
+
   return (
     <div className="App">
+      <span>Filter By Year</span>
       <button
+        onClick={beforeYear}
         style={{
           width: "160px",
           height: "40px",
@@ -46,9 +70,10 @@ export default function App() {
           margin: "3px"
         }}
       >
-        Filter by year
+        Filter by year before 2001
       </button>
       <button
+        onClick={afterYear}
         style={{
           width: "160px",
           height: "40px",
@@ -57,9 +82,24 @@ export default function App() {
           margin: "3px"
         }}
       >
-        Filter by Type
+        Filter by year After 2001
+      </button>
+      <br />
+      <span>Filter By Type</span>
+      <button
+        onClick={filterBySUV}
+        style={{
+          width: "160px",
+          height: "40px",
+          color: "white",
+          background: "black",
+          margin: "3px"
+        }}
+      >
+        Filter by SUV
       </button>
       <button
+        onClick={filterByCROSSOVER}
         style={{
           width: "160px",
           height: "40px",
@@ -68,7 +108,45 @@ export default function App() {
           margin: "3px"
         }}
       >
-        Sort by price
+        Filter by CROSSOVER
+      </button>
+      <button
+        onClick={filterByHATCHBACK}
+        style={{
+          width: "160px",
+          height: "40px",
+          color: "white",
+          background: "black",
+          margin: "3px"
+        }}
+      >
+        Filter by HATCHBACK
+      </button>
+      <br />
+      <span>Filter by price</span>
+      <button
+        onClick={carsAbove}
+        style={{
+          width: "160px",
+          height: "40px",
+          color: "white",
+          background: "black",
+          margin: "3px"
+        }}
+      >
+        Cars above 1 Lakh
+      </button>
+      <button
+        onClick={carsBelow}
+        style={{
+          width: "160px",
+          height: "40px",
+          color: "white",
+          background: "black",
+          margin: "3px"
+        }}
+      >
+        Cars below 1 Lakh
       </button>
       {loading ? (
         <h3>...loading</h3>
