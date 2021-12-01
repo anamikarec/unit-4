@@ -85,7 +85,12 @@ export default function App() {
                 margin: "2rem"
               }}
             >
-              <img src={cars.image} alt="image" width="200" />
+              <img
+                src={cars.image}
+                alt="image"
+                width="200"
+                className="imgTag"
+              />
               <div>
                 <h3 style={{ padding: "0 1rem 0 0" }}>Car : {cars.name}</h3>
                 <h3>Car Type : {cars.type}</h3>
