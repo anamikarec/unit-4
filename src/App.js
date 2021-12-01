@@ -33,6 +33,9 @@ export default function App() {
   //   }))
   // }
 
+  const sorting = (a, b) => {
+    return res.price - res.price;
+  };
   return (
     <div className="App">
       <button
