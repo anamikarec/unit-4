@@ -25,6 +25,14 @@ export default function App() {
     });
   }, []);
 
+  // const sorting = () =>{
+  //   setRes(res.map((item)=>{
+  //     function(a,b){
+  //       return (a-b)
+  //     }
+  //   }))
+  // }
+
   return (
     <div className="App">
       <button
@@ -69,6 +77,7 @@ export default function App() {
           background: "black",
           margin: "3px"
         }}
+        onClick={sorting}
       >
         Sort by price
       </button>
