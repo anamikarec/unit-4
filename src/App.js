@@ -32,10 +32,45 @@ export default function App() {
           width: "160px",
           height: "40px",
           color: "white",
-          background: "black"
+          background: "black",
+          margin: "3px"
         }}
       >
         BUY NOW
+      </button>
+
+      <button
+        style={{
+          width: "160px",
+          height: "40px",
+          color: "white",
+          background: "black",
+          margin: "3px"
+        }}
+      >
+        Filter by year
+      </button>
+      <button
+        style={{
+          width: "160px",
+          height: "40px",
+          color: "white",
+          background: "black",
+          margin: "3px"
+        }}
+      >
+        Filter by Type
+      </button>
+      <button
+        style={{
+          width: "160px",
+          height: "40px",
+          color: "white",
+          background: "black",
+          margin: "3px"
+        }}
+      >
+        Sort by price
       </button>
       {loading ? (
         <h3>...loading</h3>
