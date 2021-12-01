@@ -21,32 +21,47 @@ export default function App() {
       // console.log(res)
       console.log(data);
       setRes(data);
+      setLoading(false);
     });
   }, []);
 
   return (
     <div className="App">
-      {res.map((cars) => {
-        return (
-          <div
-            key={cars.id}
-            style={{
-              display: "flex",
-              border: "1px solid black",
-              padding: "2rem",
-              margin: "2rem"
-            }}
-          >
-            <img src={cars.image} alt="image" width="200" />
-            <div>
-              <h3 style={{ padding: "0 1rem 0 0" }}>Car : {cars.name}</h3>
-              <h3>Car Type : {cars.type}</h3>
-              <h3>Car Year : {cars.year}</h3>
-              <h3>Price of Car : {cars.price}</h3>
+      <button
+        style={{
+          width: "150px",
+          height: "40px",
+          color: "white",
+          background: "black"
+        }}
+      >
+        BUY NOW
+      </button>
+      {loading ? (
+        <h3>...loading</h3>
+      ) : (
+        res.map((cars) => {
+          return (
+            <div
+              key={cars.id}
+              style={{
+                display: "flex",
+                border: "1px solid black",
+                padding: "2rem",
+                margin: "2rem"
+              }}
+            >
+              <img src={cars.image} alt="image" width="200" />
+              <div>
+                <h3 style={{ padding: "0 1rem 0 0" }}>Car : {cars.name}</h3>
+                <h3>Car Type : {cars.type}</h3>
+                <h3>Car Year : {cars.year}</h3>
+                <h3>Price of Car : {cars.price}</h3>
+              </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })
+      )}
     </div>
   );
 }
