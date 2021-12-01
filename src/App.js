@@ -9,6 +9,17 @@ const getData = () => {
   };
   return axios(config);
 };
+const postData = () => {
+  // payload:{
+  //   name: "name",
+  // }
+  const config = {
+    url: "db.json",
+    method: "post"
+    // data:payload
+  };
+  return axios(config);
+};
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -24,18 +35,6 @@ export default function App() {
       setLoading(false);
     });
   }, []);
-
-  // const sorting = () =>{
-  //   setRes(res.map((item)=>{
-  //     function(a,b){
-  //       return (a-b)
-  //     }
-  //   }))
-  // }
-
-  // const sorting = (a, b) => {
-  //   return res.price - res.price;
-  // };
   return (
     <div className="App">
       <button
