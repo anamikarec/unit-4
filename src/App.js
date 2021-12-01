@@ -29,7 +29,7 @@ export default function App() {
     <div className="App">
       <button
         style={{
-          width: "150px",
+          width: "160px",
           height: "40px",
           color: "white",
           background: "black"
