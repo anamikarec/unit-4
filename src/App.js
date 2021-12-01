@@ -33,23 +33,11 @@ export default function App() {
   //   }))
   // }
 
-  const sorting = (a, b) => {
-    return res.price - res.price;
-  };
+  // const sorting = (a, b) => {
+  //   return res.price - res.price;
+  // };
   return (
     <div className="App">
-      <button
-        style={{
-          width: "160px",
-          height: "40px",
-          color: "white",
-          background: "black",
-          margin: "3px"
-        }}
-      >
-        BUY NOW
-      </button>
-
       <button
         style={{
           width: "160px",
@@ -80,7 +68,6 @@ export default function App() {
           background: "black",
           margin: "3px"
         }}
-        onClick={sorting}
       >
         Sort by price
       </button>
@@ -104,6 +91,17 @@ export default function App() {
                 <h3>Car Type : {cars.type}</h3>
                 <h3>Car Year : {cars.year}</h3>
                 <h3>Price of Car : {cars.price}</h3>
+                <button
+                  style={{
+                    width: "160px",
+                    height: "40px",
+                    color: "white",
+                    background: "black",
+                    margin: "3px"
+                  }}
+                >
+                  BUY NOW
+                </button>
               </div>
             </div>
           );
